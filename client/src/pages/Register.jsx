@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef  , useEffect} from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -12,6 +12,22 @@ export default function Register() {
   const [rsvpStatus, setRsvpStatus] = useState(null);
 
   const formRef = useRef(null);
+
+  const slides = [
+  "/slider1.jpg",
+  "/slider2.jpg",
+  "/slider3.jpg",
+];
+
+const [currentSlide, setCurrentSlide] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, [slides.length]);
 
   const {
     register,
@@ -70,6 +86,60 @@ export default function Register() {
   };
 
   return (
+
+ <>
+    {/* HERO SLIDER */}
+    <section className="hero-slider">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`slide ${index === currentSlide ? "active" : ""}`}
+          style={{
+            backgroundImage: `url(${slide})`,
+          }}
+        />
+      ))}
+
+      <div className="hero-overlay"></div>
+
+      <div className="hero-content">
+        {/* <div className="hero-tag">
+          Bharat Metal Exchange Transformation Ceremony
+        </div> */}
+
+        <h1>Are You Future Ready?</h1>
+
+        <p>
+          Join us as Bombay Metal Exchange evolves into Bharat Metal
+          Exchange. Witness a defining moment in the Indian metal industry
+          alongside business leaders, innovators, members, and partners.
+          Together we celebrate the past, embrace transformation, and
+          shape the future.
+        </p>
+
+        <button
+          className="hero-btn"
+          onClick={() =>
+            document
+              .querySelector(".registration-page")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Register Now
+        </button>
+      </div>
+
+      <div className="slider-dots">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={index === currentSlide ? "active-dot" : ""}
+            onClick={() => setCurrentSlide(index)}
+          />
+        ))}
+      </div>
+    </section>
+
     <div className="registration-page">
       {/* LEFT SIDE */}
 
@@ -77,36 +147,35 @@ export default function Register() {
         <div className="event-overlay"></div>
 
         <div className="event-content">
-          <div className="event-tag">Be A Part Of History</div>
+
+          <div className="event-tag">
+            Be A Part Of History
+          </div>
 
           <h1>
             Bombay Metal Exchange
+            <span> Evolves To </span>
             <span> Evolves To </span>
             Bharat Metal Exchange
           </h1>
 
           <p className="event-description">
-            The President, Office Bearers and Board of Directors warmly
-            invite you to celebrate a landmark chapter in our
-            journey. Join industry leaders, members and partners as we
-            mark this milestone together.
+            The President, Office Bearers and Board of Directors cordially invite you to join us in celebrating a landmark chapter in our journey.
+
+Come together with industry leaders, members and partners as we commemorate
           </p>
 
           <div className="event-cards">
             <div className="info-card">
-              <small>DATE & TIME</small>
+              <small>DATE & Time</small>
               <h3>20 June 2026</h3>
-              <p>4:00 PM</p>
+              <p> 4:00 PM</p>
             </div>
 
             <div className="info-card">
               <small>VENUE</small>
               <h3>Jade Ball Room</h3>
-              <p>
-                Hotel Sahara Star
-                <br />
-                Mumbai
-              </p>
+              <p>Hotel Sahara Star <br/>Mumbai</p>
             </div>
           </div>
 
@@ -118,6 +187,7 @@ export default function Register() {
               <li>Industry Leadership Address</li>
               <li>Strategic Vision 2030</li>
               <li>Networking Dinner</li>
+              <li>Networking Dinner</li>
               <li>Recognition & Awards Ceremony</li>
             </ul>
           </div>
@@ -126,21 +196,25 @@ export default function Register() {
 
       {/* RIGHT SIDE */}
 
-      <div className="form-section">
-        <div className="rsvp-card">
-          <div className="rsvp-badge">Would Love To Hear</div>
+<div className="form-section">
 
-          <h2>
-            Will you be attending the Bharat Metal Exchange Evolve Ceremony?
-          </h2>
+  <div className="rsvp-card">
 
-          <p>
-            Kindly confirm your participation for the historic transformation
-            of Bombay Metal Exchange into Bharat Metal Exchange on
-            <strong> 20 June 2026 by 4:00 PM </strong>
-            at
-            <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
-          </p>
+    <div className="rsvp-badge">
+      Would Love To Hear
+    </div>
+
+    <h2>
+      Will you be attending the Bharat Metal Exchange Evolve Ceremony?
+    </h2>
+
+    <p>
+      Kindly confirm your participation for the historic transformation
+      of Bombay Metal Exchange into Bharat Metal Exchange on
+      <strong> 20 June 2026 by 4:00 PM </strong>
+      at 
+      <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
+    </p>
 
           <div className="attendee-counter">
             <span>150+</span> Industry Leaders Confirmed
@@ -262,5 +336,6 @@ export default function Register() {
         )}
       </div>
     </div>
+    </>
   );
 }
