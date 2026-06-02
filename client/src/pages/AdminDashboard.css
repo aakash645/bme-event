@@ -1,0 +1,146 @@
+/* ===========================
+   RESPONSIVE DASHBOARD
+=========================== */
+
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-table table {
+  min-width: 900px;
+}
+
+.guest-row {
+  background: var(--purple-light);
+}
+
+.mobile-registration-list {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .table-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .search-input-wrap {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .table-toolbar button,
+  .table-toolbar select,
+  .search-input-wrap {
+    width: 100%;
+  }
+
+  .desktop-table {
+    display: none;
+  }
+
+  .mobile-registration-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* allow tables to scroll horizontally on small screens */
+  .responsive-table { overflow-x: auto; }
+  .responsive-table table { min-width: 640px; }
+
+  .mobile-registration-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+  }
+
+  .mobile-registration-card .btn { width: 100%; }
+  .mobile-card-header { align-items: center; }
+
+  .mobile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .mobile-card-header h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .mobile-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-card-body p {
+    margin: 0;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+  }
+
+  .guest-details {
+    margin-top: 12px;
+  }
+
+  .guest-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .guest-item {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    margin-top: 8px;
+    font-size: 0.85rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .pagination-btns {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .pagination-btns button {
+    flex: 1;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+}

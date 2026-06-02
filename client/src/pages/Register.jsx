@@ -1,0 +1,276 @@
+import { useState } from "react";
+import { useForm, useFieldArray } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import GuestFields from "../components/GuestFields";
+import api from "../utils/api";
+import "./Register.css";
+
+export default function Register() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+const [rsvpStatus, setRsvpStatus] = useState(null);
+
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      primaryGuest: {
+        name: "",
+        phone: "",
+        email: "",
+        company: "",
+      },
+      additionalGuests: [],
+    },
+  });
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "additionalGuests",
+  });
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+
+    try {
+      const res = await api.post("/register", data);
+
+      navigate("/success", {
+        state: {
+          code: res.data.registrationCode,
+          name: data.primaryGuest.name,
+        },
+      });
+    } catch (err) {
+      const msg =
+        err.response?.data?.message ||
+        "Registration failed. Please try again.";
+
+      toast.error(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="registration-page">
+
+      {/* LEFT SIDE */}
+
+      <div className="event-section">
+
+        <div className="event-overlay"></div>
+
+        <div className="event-content">
+
+          <div className="event-tag">
+            BME REBRANDING CEREMONY
+          </div>
+
+          <h1>
+            Bombay Metal Exchange
+            <span>to</span>
+            Bharat Metal Exchange
+          </h1>
+
+          <p className="event-description">
+            Join industry leaders, traders, manufacturers,
+            exporters and stakeholders as we celebrate
+            the transformation of Bombay Metal Exchange
+            into Bharat Metal Exchange.
+          </p>
+
+          <div className="event-cards">
+
+            <div className="info-card">
+              <small>DATE</small>
+              <h4>20 June 2026</h4>
+            </div>
+
+            <div className="info-card">
+              <small>VENUE</small>
+              <h4>Sahara Star Hotel</h4>
+              <p>Mumbai</p>
+            </div>
+
+          </div>
+
+          <div className="event-highlights">
+
+            <h3>Event Highlights</h3>
+
+            <ul>
+              <li>Official Unveiling of Bharat Metal Exchange</li>
+              <li>Industry Leadership Address</li>
+              <li>Strategic Vision 2030</li>
+              <li>Networking Lunch</li>
+              <li>Recognition & Awards Ceremony</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* RIGHT SIDE */}
+
+<div className="form-section">
+
+  <div className="rsvp-card">
+
+    <div className="rsvp-badge">
+      RSVP REQUIRED
+    </div>
+
+    <h2>
+      Will you be attending the Bharat Metal Exchange Launch Ceremony?
+    </h2>
+
+    <p>
+      Kindly confirm your participation for the historic transformation
+      of Bombay Metal Exchange into Bharat Metal Exchange on
+      <strong> 20 June 2026 </strong>
+      at
+      <strong> Sahara Star Hotel, Mumbai.</strong>
+    </p>
+
+    <div className="attendee-counter">
+      <span>150+</span> Industry Leaders Confirmed
+    </div>
+
+    <div className="rsvp-buttons">
+
+      <button
+        type="button"
+        className={`rsvp-btn yes ${rsvpStatus === "yes" ? "active" : ""}`}
+        onClick={() => setRsvpStatus("yes")}
+      >
+        ✓ Yes, I Will Attend
+      </button>
+
+      <button
+        type="button"
+        className={`rsvp-btn no ${rsvpStatus === "no" ? "active" : ""}`}
+        onClick={() => setRsvpStatus("no")}
+      >
+        ✕ Unable To Attend
+      </button>
+
+    </div>
+
+  </div>
+
+  {rsvpStatus === "no" && (
+    <div className="decline-card">
+
+      <div className="decline-icon">
+        ❤
+      </div>
+
+      <h3>Thank You For Your Response</h3>
+
+      <p>
+        We appreciate your response. Although you will not be attending,
+        we look forward to connecting with you in future Bharat Metal
+        Exchange initiatives and industry events.
+      </p>
+
+    </div>
+  )}
+
+  {rsvpStatus === "yes" && (
+    <>
+      <div className="page-header">
+        <h2>Complete Your Registration</h2>
+
+        <p>
+          Please provide your details below to confirm attendance.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+
+        <div className="card">
+          <div className="card-header">
+            <h3>Primary Attendee</h3>
+          </div>
+
+          <GuestFields
+            register={register}
+            errors={errors}
+            prefix="primaryGuest"
+          />
+        </div>
+
+        {fields.map((field, index) => (
+          <div className="card" key={field.id}>
+
+            <div className="card-header guest-header">
+
+              <h3>Guest {index + 1}</h3>
+
+              <button
+                type="button"
+                className="remove-btn"
+                onClick={() => remove(index)}
+              >
+                Remove
+              </button>
+
+            </div>
+
+            <GuestFields
+              register={register}
+              errors={errors}
+              prefix={`additionalGuests.${index}`}
+            />
+
+          </div>
+        ))}
+
+        <button
+          type="button"
+          className="add-guest-btn"
+          onClick={() =>
+            append({
+              name: "",
+              phone: "",
+              email: "",
+              company: "",
+            })
+          }
+        >
+          + Add Additional Guest
+        </button>
+
+        {fields.length > 0 && (
+          <div className="guest-count">
+            {fields.length} Additional Guest
+            {fields.length > 1 ? "s" : ""} Added
+          </div>
+        )}
+
+        <button
+          type="submit"
+          className="submit-btn"
+          disabled={loading}
+        >
+          {loading
+            ? "Submitting..."
+            : "Confirm Registration"}
+        </button>
+
+      </form>
+    </>
+  )}
+
+</div>
+
+    </div>
+  );
+}
