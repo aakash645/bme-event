@@ -19,6 +19,7 @@ app.use(helmet());
   const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
+  'https://events.bme.in',
   process.env.CLIENT_URL
 ].filter(Boolean);
 
