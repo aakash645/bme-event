@@ -24,8 +24,12 @@ router.post('/login', async (req, res) => {
 
     res.json({ token, username: admin.username });
   } catch (err) {
-    res.status(500).json({ message: 'Server error' });
-  }
+  console.error('LOGIN ERROR:', err);
+  res.status(500).json({
+    message: err.message,
+    error: String(err)
+  });
+}
 });
 
 // POST /api/auth/setup — one-time admin seeder (disable after first use)
