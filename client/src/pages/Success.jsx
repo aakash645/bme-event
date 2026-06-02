@@ -28,7 +28,7 @@ export default function Success() {
         </p>
         <div className="reg-code">{state.code}</div>
         <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
-          Save this code — you may need it at check-in
+          Save this code or take a screenshot — you may need it at check-in
         </p>
         <button className="btn btn-primary" onClick={() => navigate('/')}>
           Register another person
