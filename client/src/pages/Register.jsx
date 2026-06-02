@@ -68,33 +68,33 @@ const [rsvpStatus, setRsvpStatus] = useState(null);
         <div className="event-content">
 
           <div className="event-tag">
-            BME REBRANDING CEREMONY
+            Be A Part Of History
           </div>
 
           <h1>
             Bombay Metal Exchange
-            <span>to</span>
+            <span> Evolves To </span>
             Bharat Metal Exchange
           </h1>
 
           <p className="event-description">
-            Join industry leaders, traders, manufacturers,
-            exporters and stakeholders as we celebrate
-            the transformation of Bombay Metal Exchange
-            into Bharat Metal Exchange.
+            The President, Office Bearers and Board of Directors cordially invite you to join us in celebrating a landmark chapter in our journey.
+
+Come together with industry leaders, members and partners as we commemorate
           </p>
 
           <div className="event-cards">
 
             <div className="info-card">
-              <small>DATE</small>
-              <h4>20 June 2026</h4>
+              <small>DATE & Time</small>
+              <h3>20 June 2026</h3>
+              <p> 4:00 PM</p>
             </div>
 
             <div className="info-card">
               <small>VENUE</small>
-              <h4>Sahara Star Hotel</h4>
-              <p>Mumbai</p>
+              <h3>Jade Ball Room</h3>
+              <p>Hotel Sahara Star <br/>Mumbai</p>
             </div>
 
           </div>
@@ -107,7 +107,7 @@ const [rsvpStatus, setRsvpStatus] = useState(null);
               <li>Official Unveiling of Bharat Metal Exchange</li>
               <li>Industry Leadership Address</li>
               <li>Strategic Vision 2030</li>
-              <li>Networking Lunch</li>
+              <li>Networking Dinner</li>
               <li>Recognition & Awards Ceremony</li>
             </ul>
 
@@ -124,19 +124,19 @@ const [rsvpStatus, setRsvpStatus] = useState(null);
   <div className="rsvp-card">
 
     <div className="rsvp-badge">
-      RSVP REQUIRED
+      Would Love To Hear
     </div>
 
     <h2>
-      Will you be attending the Bharat Metal Exchange Launch Ceremony?
+      Will you be attending the Bharat Metal Exchange Evolve Ceremony?
     </h2>
 
     <p>
       Kindly confirm your participation for the historic transformation
       of Bombay Metal Exchange into Bharat Metal Exchange on
-      <strong> 20 June 2026 </strong>
-      at
-      <strong> Sahara Star Hotel, Mumbai.</strong>
+      <strong> 20 June 2026 by 4:00 PM </strong>
+      at 
+      <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
     </p>
 
     <div className="attendee-counter">
