@@ -86,10 +86,10 @@ export default function Register() {
           </h1>
 
           <p className="event-description">
-            The President, Office Bearers and Board of Directors cordially
-            invite you to join us in celebrating a landmark chapter in our
-            journey.Come together with industry leaders, members and partners as we
-            commemorate.
+            The President, Office Bearers and Board of Directors warmly
+            invite you to celebrate a landmark chapter in our
+            journey. Come together with industry leaders, members and partners as we
+            mark this milestone together.
           </p>
 
           <div className="event-cards">
