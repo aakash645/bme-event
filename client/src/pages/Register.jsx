@@ -88,7 +88,7 @@ export default function Register() {
           <p className="event-description">
             The President, Office Bearers and Board of Directors warmly
             invite you to celebrate a landmark chapter in our
-            journey. Come together with industry leaders, members and partners as we
+            journey. Join industry leaders, members and partners as we
             mark this milestone together.
           </p>
 
