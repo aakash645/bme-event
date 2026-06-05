@@ -155,7 +155,6 @@ useEffect(() => {
           <h1>
             Bombay Metal Exchange
             <span> Evolves To </span>
-            <span> Evolves To </span>
             Bharat Metal Exchange
           </h1>
 
@@ -191,7 +190,6 @@ useEffect(() => {
               <li>Official Unveiling of Bharat Metal Exchange</li>
               <li>Industry Leadership Address</li>
               <li>Strategic Vision 2030</li>
-              <li>Networking Dinner</li>
               <li>Networking Dinner</li>
               <li>Recognition & Awards Ceremony</li>
             </ul>
