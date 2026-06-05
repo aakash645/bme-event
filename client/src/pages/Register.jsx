@@ -1,4 +1,4 @@
-import { useState, useRef  , useEffect} from "react";
+import { useState, useRef  , useEffect } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -6,13 +6,14 @@ import GuestFields from "../components/GuestFields";
 import api from "../utils/api";
 import "./Register.css";
 
+
 export default function Register() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState(null);
 
   const formRef = useRef(null);
-
+   
   const slides = [
   "/slider1.jpg",
   "/slider2.jpg",
@@ -28,6 +29,7 @@ useEffect(() => {
 
   return () => clearInterval(interval);
 }, [slides.length]);
+
 
   const {
     register,
@@ -62,6 +64,8 @@ useEffect(() => {
     }, 100);
   };
 
+  
+
   const onSubmit = async (data) => {
     setLoading(true);
 
@@ -86,9 +90,9 @@ useEffect(() => {
   };
 
   return (
+    <>
 
- <>
-    {/* HERO SLIDER */}
+     {/* HERO SLIDER */}
     <section className="hero-slider">
       {slides.map((slide, index) => (
         <div
@@ -104,7 +108,7 @@ useEffect(() => {
 
       <div className="hero-content">
         {/* <div className="hero-tag">
-          Bharat Metal Exchange Transformation Ceremony
+          Bharat Metal Exchange Evolves Ceremony
         </div> */}
 
         <h1>Are You Future Ready?</h1>
@@ -138,8 +142,7 @@ useEffect(() => {
           />
         ))}
       </div>
-    </section>
-
+    </section> 
     <div className="registration-page">
       {/* LEFT SIDE */}
 
@@ -147,10 +150,7 @@ useEffect(() => {
         <div className="event-overlay"></div>
 
         <div className="event-content">
-
-          <div className="event-tag">
-            Be A Part Of History
-          </div>
+          <div className="event-tag">Be A Part Of History</div>
 
           <h1>
             Bombay Metal Exchange
@@ -160,22 +160,27 @@ useEffect(() => {
           </h1>
 
           <p className="event-description">
-            The President, Office Bearers and Board of Directors cordially invite you to join us in celebrating a landmark chapter in our journey.
-
-Come together with industry leaders, members and partners as we commemorate
+            The President, Office Bearers and Board of Directors warmly
+            invite you to celebrate a landmark chapter in our
+            journey. Join industry leaders, members and partners as we
+            mark this milestone together.
           </p>
 
           <div className="event-cards">
             <div className="info-card">
-              <small>DATE & Time</small>
+              <small>DATE & TIME</small>
               <h3>20 June 2026</h3>
-              <p> 4:00 PM</p>
+              <p>4:00 PM</p>
             </div>
 
             <div className="info-card">
               <small>VENUE</small>
               <h3>Jade Ball Room</h3>
-              <p>Hotel Sahara Star <br/>Mumbai</p>
+              <p>
+                Hotel Sahara Star
+                <br />
+                Mumbai
+              </p>
             </div>
           </div>
 
@@ -196,25 +201,21 @@ Come together with industry leaders, members and partners as we commemorate
 
       {/* RIGHT SIDE */}
 
-<div className="form-section">
+      <div className="form-section">
+        <div className="rsvp-card">
+          <div className="rsvp-badge">Would Love To Hear</div>
 
-  <div className="rsvp-card">
+          <h2>
+            Will you be attending the Bharat Metal Exchange Evolve Ceremony?
+          </h2>
 
-    <div className="rsvp-badge">
-      Would Love To Hear
-    </div>
-
-    <h2>
-      Will you be attending the Bharat Metal Exchange Evolve Ceremony?
-    </h2>
-
-    <p>
-      Kindly confirm your participation for the historic transformation
-      of Bombay Metal Exchange into Bharat Metal Exchange on
-      <strong> 20 June 2026 by 4:00 PM </strong>
-      at 
-      <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
-    </p>
+          <p>
+            Kindly confirm your participation for the historic transformation
+            of Bombay Metal Exchange into Bharat Metal Exchange on
+            <strong> 20 June 2026 by 4:00 PM </strong>
+            at
+            <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
+          </p>
 
           <div className="attendee-counter">
             <span>150+</span> Industry Leaders Confirmed
