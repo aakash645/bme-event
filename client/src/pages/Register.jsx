@@ -12,6 +12,13 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState(null);
 
+  const brands = [
+    // "/apple.png",
+    "/phonepe.png",
+    "/phonepe.png",
+    "/phonepe.png",
+  ];
+
   const formRef = useRef(null);
    
   const slides = [
@@ -334,7 +341,21 @@ useEffect(() => {
           </div>
         )}
       </div>
+
+
     </div>
+    <section className="brands-section">
+      <h2 className="brands-title">Our Title Sponsor</h2>
+      <div className="brands-slider">
+        <div className="brands-track">
+          {[...brands, ...brands].map((brand, index) => (
+            <div className="brand-item" key={index}>
+              <img src={brand} alt="brand" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     </>
   );
 }
