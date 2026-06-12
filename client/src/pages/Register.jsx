@@ -8,6 +8,8 @@ import "./Register.css";
 
 
 export default function Register() {
+
+  const [showSponsorPopup, setShowSponsorPopup] = useState(true);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState(null);
@@ -33,6 +35,8 @@ useEffect(() => {
   const interval = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, 4000);
+
+  
 
   return () => clearInterval(interval);
 }, [slides.length]);
@@ -359,6 +363,32 @@ useEffect(() => {
         </div>
       </div>
     </section>
+
+    {/* TITLE SPONSOR POPUP */}
+{showSponsorPopup && (
+  <div className="sponsor-popup-overlay">
+    <div className="sponsor-popup">
+      <button
+        className="popup-close"
+        onClick={() => setShowSponsorPopup(false)}
+      >
+        ✕
+      </button>
+
+      <h2 className="popup-title">Our Title Sponsor</h2>
+
+      <div className="popup-slider">
+        <div className="popup-track">
+          {[...brands, ...brands].map((brand, index) => (
+            <div className="popup-brand-item" key={index}>
+              <img src={brand} alt="Sponsor" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
     </>
   );
 }

@@ -570,3 +570,90 @@
     max-width: 120px;
   }
 }
+
+
+/* Popup Overlay */
+.sponsor-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup Box */
+.sponsor-popup {
+  background: #A32D2D;
+  width: 90%;
+  max-width: 1000px;
+  height: 300px;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Heading */
+.popup-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #E1F5EE;
+}
+
+/* Close Button */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Slider */
+.popup-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.popup-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: sponsorScroll 15s linear infinite;
+}
+
+.popup-brand-item {
+  flex-shrink: 0;
+}
+
+.popup-brand-item img {
+  height: 160px;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes sponsorScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .popup-brand-item img {
+    height: 80px;
+  }
+
+  .popup-title {
+    font-size: 1.5rem;
+  }
+}
