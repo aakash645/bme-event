@@ -175,7 +175,7 @@ useEffect(() => {
           <div className="event-cards">
             <div className="info-card">
               <small>DATE & TIME</small>
-              <h3>20 June 2026</h3>
+              <h3>Saturday , 20 June 2026</h3>
               <p>4:00 PM</p>
             </div>
 
@@ -196,9 +196,9 @@ useEffect(() => {
             <ul>
               <li>Official Unveiling of Bharat Metal Exchange</li>
               <li>Industry Leadership Address</li>
-              <li>Strategic Vision 2030</li>
-              <li>Networking Dinner</li>
-              <li>Recognition & Awards Ceremony</li>
+              <li>BME Metal Hub In Association With MIDC</li>
+              <li>Networking & Dinner</li>
+              <li>BME Members Directory 2026</li>
             </ul>
           </div>
         </div>

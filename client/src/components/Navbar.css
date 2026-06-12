@@ -9,7 +9,7 @@
 }
 
 .nav-brand {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
   color: #D42020;
 }
@@ -17,7 +17,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   color:#D42020;
 }
 
