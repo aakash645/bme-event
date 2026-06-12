@@ -224,6 +224,9 @@ useEffect(() => {
 
           <div className="attendee-counter">
             <span>150+</span> Industry Leaders Confirmed
+            <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
+          For Any Queries , Reach us at +91 97690 28890 or mail us at info@bme.in
+        </p>
           </div>
 
           <div className="rsvp-buttons">
