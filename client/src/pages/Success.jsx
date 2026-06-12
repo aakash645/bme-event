@@ -30,6 +30,9 @@ export default function Success() {
         <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
           Save this code or take a screenshot — you may need it at check-in
         </p>
+        <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
+          For Any Queries , Reach us at +91 97690 28890 or mail us at info@bme.in
+        </p>
         <button className="btn btn-primary" onClick={() => navigate('/')}>
           Register another person
         </button>
