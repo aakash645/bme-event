@@ -273,8 +273,8 @@ tbody tr:hover td { background: var(--gray-50); }
 .auth-logo p { color: var(--gray-600); font-size: 0.875rem; margin-top: 4px; }
 
 /* Success screen */
-.success-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-.success-card { background: var(--white); border-radius: var(--radius-xl); padding: 3rem 2rem; text-align: center; max-width: 440px; border: 1px solid var(--gray-200); box-shadow: var(--shadow-md); }
+.success-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; margin-top: 30px; }
+.success-card { background: var(--white); border-radius: var(--radius-xl); padding: 3rem 3rem; text-align: center; max-width: 100%; border: 1px solid var(--gray-200); box-shadow: var(--shadow-md); }
 .success-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
 .reg-code { font-family: monospace; font-size: 1.6rem; font-weight: 700; color: var(--purple); background: var(--purple-light); padding: 10px 24px; border-radius: var(--radius-md); display: inline-block; letter-spacing: 3px; margin: 1rem 0; }
 

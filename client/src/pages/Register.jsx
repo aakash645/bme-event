@@ -104,56 +104,8 @@ useEffect(() => {
     <>
 
      {/* HERO SLIDER */}
-    <section className="hero-slider">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`slide ${index === currentSlide ? "active" : ""}`}
-          style={{
-            backgroundImage: `url(${slide})`,
-          }}
-        />
-      ))}
-
-      <div className="hero-overlay"></div>
-
-      <div className="hero-content">
-        {/* <div className="hero-tag">
-          Bharat Metal Exchange Evolves Ceremony
-        </div> */}
-
-        <h1>Are You Future Ready?</h1>
-
-        <p>
-          Join us as Bombay Metal Exchange evolves into Bharat Metal
-          Exchange. Witness a defining moment in the Indian metal industry
-          alongside business leaders, innovators, members, and partners.
-          Together we celebrate the past, embrace transformation, and
-          shape the future.
-        </p>
-
-        <button
-          className="hero-btn"
-          onClick={() =>
-            document
-              .querySelector(".registration-page")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Register Now
-        </button>
-      </div>
-
-      <div className="slider-dots">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={index === currentSlide ? "active-dot" : ""}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
-      </div>
-    </section> 
+    
+    
     <div className="registration-page">
       {/* LEFT SIDE */}
 
@@ -161,33 +113,31 @@ useEffect(() => {
         <div className="event-overlay"></div>
 
         <div className="event-content">
-          <div className="event-tag">Be A Part Of History</div>
+          <div className="event-tag">Member's Annual General Meeting</div>
 
           <h1>
-            Bombay Metal Exchange
-            <span> Evolves To </span>
             Bharat Metal Exchange
+            <span> Annual General Meeting 2026 </span>
+            
           </h1>
 
           <p className="event-description">
-            The President, Office Bearers and Board of Directors warmly
-            invite you to celebrate a landmark chapter in our
-            journey. Join industry leaders, members and partners as we
-            mark this milestone together.
+            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions ,
+             board recognition and reconnecting with the indudstry , followed by dinner. 
           </p>
 
           <div className="event-cards">
             <div className="info-card">
               <small>DATE & TIME</small>
-              <h3>Saturday , 20 June 2026</h3>
-              <p>4:00 PM</p>
+              <h3>Saturday , 19th Sep 2026</h3>
+              <p>5:00 PM</p>
             </div>
 
             <div className="info-card">
               <small>VENUE</small>
-              <h3>Jade Ball Room</h3>
+              <h3>NSE Atrium</h3>
               <p>
-                Hotel Sahara Star
+                NSE , Bandra Kurla Complex
                 <br />
                 Mumbai
               </p>
@@ -195,14 +145,19 @@ useEffect(() => {
           </div>
 
           <div className="event-highlights">
-            <h3>Event Highlights</h3>
-
+            <h3>What the evening covers</h3>
+            <p>
+                From resolutions to recognition-here's the shape of evening.Adetailed schedule is shared with members closer to the date.
+              </p>
+<br />
             <ul>
-              <li>Official Unveiling of Bharat Metal Exchange</li>
-              <li>Industry Leadership Address</li>
-              <li>BME Metal Hub In Association With MIDC</li>
+              <li>Welcome & AGM Proceedings</li>
+              <li>Board Introductions</li>
+              <li>Leadership Addressess</li>
+              <li>Excellence Awards</li>
+              <li>Charitable Trust Address</li>
               <li>Networking & Dinner</li>
-              <li>BME Members Directory 2026</li>
+              
             </ul>
           </div>
         </div>
@@ -215,19 +170,18 @@ useEffect(() => {
           <div className="rsvp-badge">Would Love To Hear</div>
 
           <h2>
-            Will you be attending the Bharat Metal Exchange Evolve Ceremony?
+            Will you be attending the Bharat Metal Exchange AGM 2026?
           </h2>
 
           <p>
-            Kindly confirm your participation for the historic transformation
-            of Bombay Metal Exchange into Bharat Metal Exchange on
-            <strong> 20 June 2026 by 4:00 PM </strong>
+            Members are requested to confirm the attendance in advance to help us pla seating and dinner arrangements 
+            <strong> 19th Sep 2026 by 5:00 PM </strong>
             at
-            <strong> Jade Ball Room, Hotel Sahara Star, Mumbai.</strong>
+            <strong> NSE Atrium , NSE , Bandra Kurla Complex , Mumbai.</strong>
           </p>
 
           <div className="attendee-counter">
-            <span>150+</span> Industry Leaders Confirmed
+            <span>50+ </span> Member's Confirmed
             <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
           For Any Queries , Reach us at +91 97690 28890 or mail us at info@bme.in
         </p>
@@ -351,44 +305,57 @@ useEffect(() => {
 
 
     </div>
-    <section className="brands-section">
-      <h2 className="brands-title">Our Title Sponsor</h2>
-      <div className="brands-slider">
-        <div className="brands-track">
-          {[...brands, ...brands].map((brand, index) => (
-            <div className="brand-item" key={index}>
-              <img src={brand} alt="brand" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <section className="venue-section">
+  <div className="venue-container">
+    {/* Left Side - Venue Details */}
+    <div className="venue-info">
+      <h2 className="venue-title">Where We Meet</h2>
 
-    {/* TITLE SPONSOR POPUP */}
-{showSponsorPopup && (
-  <div className="sponsor-popup-overlay">
-    <div className="sponsor-popup">
-      <button
-        className="popup-close"
-        onClick={() => setShowSponsorPopup(false)}
-      >
-        ✕
-      </button>
+      <div className="venue-content">
+        <img
+          src="/venue.jpg"
+          alt="Venue"
+          className="venue-image"
+        />
 
-      <h2 className="popup-title">Our Title Sponsor</h2>
+        <div className="venue-details">
+          <h3>NSE Atrium (NSE)</h3>
+          
+          <p>
+           National Stock Exchange of India Ltd.,
+Bandra Kurla Complex,
+Bandra (E)
+Mumbai – 400 051
+          </p>
 
-      <div className="popup-slider">
-        <div className="popup-track">
-          {[...brands, ...brands].map((brand, index) => (
-            <div className="popup-brand-item" key={index}>
-              <img src={brand} alt="Sponsor" />
-            </div>
-          ))}
+          <a
+            href="https://share.google/Uqm3guN9Qej5zrJXI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="venue-button"
+          >
+            Get Directions
+          </a>
         </div>
       </div>
     </div>
+
+    {/* Right Side - Map */}
+    <div className="venue-map">
+      <iframe
+        title="Venue Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0870257741253!2d72.85763937520504!3d19.059910982141375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8dd865932f5%3A0xde111e7daa319c82!2sNational%20Stock%20Exchange!5e0!3m2!1sen!2sin!4v1788640656852!5m2!1sen!2sin
+"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   </div>
-)}
+</section>
+
+
+    
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import './Register.css';
 
 export default function Success() {
   const { state } = useLocation();
@@ -34,7 +35,57 @@ export default function Success() {
         <button className="btn btn-primary" onClick={() => navigate('/')}>
           Register another person
         </button>
+        <br/>
+        <section className="venue-section">
+  <div className="venue-container">
+    {/* Left Side - Venue Details */}
+    <div className="venue-info">
+      <h2 className="venue-title">Where We Meet</h2>
+
+      <div className="venue-content">
+        <img
+          src="/venue.jpg"
+          alt="Venue"
+          className="venue-image"
+        />
+
+        <div className="venue-details">
+          <h3>NSE Atrium (NSE)</h3>
+          
+          <p>
+           National Stock Exchange of India Ltd.,
+Bandra Kurla Complex,
+Bandra (E)
+Mumbai – 400 051
+          </p>
+
+          <a
+            href="https://share.google/Uqm3guN9Qej5zrJXI"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="venue-button"
+          >
+            Get Directions
+          </a>
+        </div>
       </div>
     </div>
+
+    {/* Right Side - Map */}
+    <div className="venue-map">
+      <iframe
+        title="Venue Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0870257741253!2d72.85763937520504!3d19.059910982141375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8dd865932f5%3A0xde111e7daa319c82!2sNational%20Stock%20Exchange!5e0!3m2!1sen!2sin!4v1788640656852!5m2!1sen!2sin
+"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+      </div>
+</div>
+    
   );
 }
