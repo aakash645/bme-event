@@ -122,8 +122,7 @@ useEffect(() => {
           </h1>
 
           <p className="event-description">
-            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions ,
-             board recognition and reconnecting with the indudstry , followed by dinner. 
+            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions,board recognition and reconnecting with the indudstry,followed by dinner. 
           </p>
 
           <div className="event-cards">
@@ -147,7 +146,7 @@ useEffect(() => {
           <div className="event-highlights">
             <h3>What the evening covers</h3>
             <p>
-                From resolutions to recognition-here's the shape of evening.Adetailed schedule is shared with members closer to the date.
+                From resolutions to recognition-here's the shape of evening.A detailed schedule is shared with members closer to the date.
               </p>
 <br />
             <ul>
@@ -157,6 +156,7 @@ useEffect(() => {
               <li>Excellence Awards</li>
               <li>Charitable Trust Address</li>
               <li>Networking & Dinner</li>
+              <li>Press Conference</li>
               
             </ul>
           </div>
@@ -177,13 +177,13 @@ useEffect(() => {
             Members are requested to confirm the attendance in advance to help us pla seating and dinner arrangements 
             <strong> 19th Sep 2026 by 5:00 PM </strong>
             at
-            <strong> NSE Atrium , NSE , Bandra Kurla Complex , Mumbai.</strong>
+            <strong> NSE Atrium,NSE,Bandra Kurla Complex,Mumbai.</strong>
           </p>
 
           <div className="attendee-counter">
             <span>50+ </span> Member's Confirmed
             <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
-          For Any Queries , Reach us at +91 97690 28890 or mail us at info@bme.in
+          For Any Queries,Reach us at +91 97690 28890 or mail us at info@bme.in
         </p>
           </div>
 
