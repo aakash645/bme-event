@@ -113,22 +113,22 @@ useEffect(() => {
         <div className="event-overlay"></div>
 
         <div className="event-content">
-          <div className="event-tag">Member's Annual General Meeting</div>
+          <div className="event-tag">70th Member's Annual General Meeting</div>
 
           <h1>
             Bharat Metal Exchange
-            <span> Annual General Meeting 2026 </span>
+            <span>70th Annual General Meeting 2026 </span>
             
           </h1>
 
           <p className="event-description">
-            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions,board recognition and reconnecting with the indudstry,followed by dinner. 
+            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions, board recognition and reconnecting with the indudstry, followed by dinner. 
           </p>
 
           <div className="event-cards">
             <div className="info-card">
               <small>DATE & TIME</small>
-              <h3>Saturday , 19th Sep 2026</h3>
+              <h3>Saturday, 19th Sep 2026</h3>
               <p>5:00 PM</p>
             </div>
 
@@ -136,7 +136,7 @@ useEffect(() => {
               <small>VENUE</small>
               <h3>NSE Atrium</h3>
               <p>
-                NSE , Bandra Kurla Complex
+                NSE, Bandra Kurla Complex
                 <br />
                 Mumbai
               </p>
@@ -146,15 +146,14 @@ useEffect(() => {
           <div className="event-highlights">
             <h3>What the evening covers</h3>
             <p>
-                From resolutions to recognition-here's the shape of evening.A detailed schedule is shared with members closer to the date.
+                From resolutions to recognition-here's the shape of evening. A detailed schedule is shared with members closer to the date.
               </p>
 <br />
             <ul>
-              <li>Welcome & AGM Proceedings</li>
+              <li>Welcome Address & AGM Proceedings</li>
               <li>Board Introductions</li>
               <li>Leadership Addressess</li>
               <li>Excellence Awards</li>
-              <li>Charitable Trust Address</li>
               <li>Networking & Dinner</li>
               <li>Press Conference</li>
               
@@ -170,20 +169,20 @@ useEffect(() => {
           <div className="rsvp-badge">Would Love To Hear</div>
 
           <h2>
-            Will you be attending the Bharat Metal Exchange AGM 2026?
+            Will you be attending the Bharat Metal Exchange 70th AGM 2026?
           </h2>
 
           <p>
             Members are requested to confirm the attendance in advance to help us pla seating and dinner arrangements 
             <strong> 19th Sep 2026 by 5:00 PM </strong>
             at
-            <strong> NSE Atrium,NSE,Bandra Kurla Complex,Mumbai.</strong>
+            <strong> NSE Atrium, NSE, Bandra Kurla Complex, Mumbai.</strong>
           </p>
 
           <div className="attendee-counter">
-            <span>50+ </span> Member's Confirmed
+            <span>Registration is mandatory, </span>Entry can be restricted as per the NSE guidelines.
             <p style={{ fontSize: '0.8rem', color: 'var(--gray-400)', marginTop: '0.5rem', marginBottom: '2rem' }}>
-          For Any Queries,Reach us at +91 97690 28890 or mail us at info@bme.in
+          For Any Queries, Reach us at +91 97690 28890 or mail us at info@bme.in
         </p>
           </div>
 
@@ -322,10 +321,7 @@ useEffect(() => {
           <h3>NSE Atrium (NSE)</h3>
           
           <p>
-           National Stock Exchange of India Ltd.,
-Bandra Kurla Complex,
-Bandra (E)
-Mumbai – 400 051
+           National Stock Exchange of India Ltd., Bandra, Kurla Complex, Bandra (E), Mumbai – 400 051
           </p>
 
           <a
