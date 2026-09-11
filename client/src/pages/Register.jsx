@@ -122,7 +122,7 @@ useEffect(() => {
           </h1>
 
           <p className="event-description">
-            Bharat Metal Exchange invites its members to the Annual General Meeting-an evening of resolutions, board recognition and reconnecting with the indudstry, followed by dinner. 
+            Bharat Metal Exchange invites its members to the 70th Annual General Meeting-an evening of resolutions, board recognition and reconnecting with the indudstry, followed by dinner. 
           </p>
 
           <div className="event-cards">
