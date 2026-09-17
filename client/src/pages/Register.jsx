@@ -186,7 +186,7 @@ useEffect(() => {
         </p>
           </div>
 
-          <div className="rsvp-buttons">
+          {/* <div className="rsvp-buttons">
             <button
               type="button"
               className={`rsvp-btn yes ${
@@ -206,7 +206,9 @@ useEffect(() => {
             >
               ✕ Unable To Attend
             </button>
-          </div>
+          </div> */}
+<h3>Registrations Closed</h3>
+
         </div>
 
         {rsvpStatus === "no" && (
